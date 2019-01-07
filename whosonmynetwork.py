@@ -24,7 +24,7 @@ for line in stdout.splitlines():
     if 'scan report for' in line.lower() and my_ip not in line.lower():
         ips.append(line.split('for ')[-1])
     if 'mac address' in line.lower():
-        macs.append(line.split(': ')[-1].split(' ')[0])
+        macs.append(line.split(': ')[-1])
 
 assert len(ips) == len(macs)
 
